@@ -1,0 +1,67 @@
+{
+	"name": "valence-quire-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/index.js",
+		"format": "prettier --write \"**/**.{js,json}\"",
+		"jest": "jest --coverage",
+		"start": "node src/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jeremyd4500/valence-quire-api.git"
+	},
+	"author": "Jeremy Wilson",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jeremyd4500/valence-quire-api/issues"
+	},
+	"homepage": "https://github.com/jeremyd4500/valence-quire-api#readme",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"enzyme": "3.3.0",
+		"enzyme-to-json": "3.3.4",
+		"express": "^4.17.1",
+		"husky": "^4.3.8",
+		"jest": "24.1.0",
+		"jsdom": "10.0.0",
+		"morgan": "^1.10.0",
+		"nock": "9.0.11",
+		"node-fetch": "^2.6.1",
+		"nodemon": "^2.0.7",
+		"prettier": "^2.2.1",
+		"pretty-quick": "^3.1.0"
+	},
+	"jest": {
+		"verbose": false,
+		"automock": false,
+		"testURL": "http://localhost:8080/",
+		"snapshotSerializers": [
+			"enzyme-to-json/serializer"
+		],
+		"testMatch": [
+			"**/*.test.js"
+		],
+		"setupFiles": [
+			"./src/SetupJest.js"
+		],
+		"collectCoverage": false,
+		"collectCoverageFrom": [
+			"src/**/*.js",
+			"!src/SetupJest.js",
+			"!src/db/index.js",
+			"!**/node_modules/**",
+			"!**/.vscode/**"
+		],
+		"modulePaths": [
+			"src"
+		],
+		"moduleFileExtensions": [
+			"js"
+		]
+	}
+}
