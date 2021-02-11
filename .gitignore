@@ -1,3 +1,7 @@
+db.json
+bin
+firestore-key.js
+
 # Logs
 logs
 *.log
